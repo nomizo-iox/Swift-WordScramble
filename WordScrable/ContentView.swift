@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let heroes = ["Thanos", "Iron-Man", "Black Panther", "Captain America", "Spider-Man", "Black Widown", "Hulk", "Ant-Man", "Doctor Strange", "Blade", "Deadpool"]
+    
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            List {
+                ForEach(heroes, id:\.self) {
+                    Text($0)
+                }
+            }
+        .navigationBarTitle("MCU")
+        }
     }
 }
 
