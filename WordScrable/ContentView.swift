@@ -10,18 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let heroes = ["Thanos", "Iron-Man", "Black Panther", "Captain America", "Spider-Man", "Black Widown", "Hulk", "Ant-Man", "Doctor Strange", "Blade", "Deadpool"]
-    
-    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(heroes, id:\.self) {
-                    Text($0)
-                }
+        
+        if let fileURL = Bundle.main.url(forResource: "Some-file", withExtension: "txt") {
+            // We found the file in our bundle!
+            
+            if let fileContent = try? String(contentsOf: fileURL) {
+                // We loaded the file into a string
             }
-        .navigationBarTitle("MCU")
         }
+        
+       return Text("Hello, Sam")
+        
     }
 }
 
